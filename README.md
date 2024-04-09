@@ -1,5 +1,5 @@
 # BPFun
-title
+BPFun: A Deep Learning Framework for Bioactive Peptide Function Prediction Using Multi-label Strategy by Transformer-driven and Sequence Rich Intrinsic Information
 ## Introduction
 
 ## Related Files
