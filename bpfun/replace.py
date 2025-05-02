@@ -1,11 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2023/10/20 12:37
-# @Author  : 孙昊
-# @File    : replace.py
-
-
-
-
 import numpy as np
 
 def replace(seq):
