@@ -81,12 +81,12 @@ if __name__ == '__main__':
 
     from prot_t5 import prot_t5
     num_trans = 1
-    print('第' + str(num_trans) + '个')
+    print(str(num_trans))
     traindata = prot_t5(seqs[0])
     tr_data = seqs[1:]
     for i in tr_data:
         num_trans += 1
-        print('第' + str(num_trans) + '个')
+        print(str(num_trans))
         i = prot_t5(i)
         traindata = np.concatenate((traindata, i), axis=0)
     torch.save(traindata, 'test/prott5.pt')
