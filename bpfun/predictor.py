@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2023/10/15 16:27
-# @Author  : 孙昊
-# @File    : predictor.py
-
-
 import os
 import keras
 import torch
