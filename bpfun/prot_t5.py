@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2023/9/13 14:54
-# @Author  : 孙昊
-# @File    : prot_t5.py
-
-
 import torch
 import numpy as np
 from transformers import T5Tokenizer, T5Model
@@ -41,24 +35,24 @@ def prot_t5(X_train):
 def t5(tr_data,te_data):
     #process and save train data
     num_trans = 1
-    print('第' + str(num_trans) + '个')
+    print(str(num_trans))
     traindata = prot_t5(tr_data[0])
     tr_data = tr_data[1:]
     for i in tr_data:
         num_trans += 1
-        print('第' + str(num_trans) + '个')
+        print(str(num_trans))
         i = prot_t5(i)
         traindata = np.concatenate((traindata, i), axis=0)
     torch.save(traindata, 'data/traindata.pt')
 
     # process and save test data
     num_test = 1
-    print('第' + str(num_test) + '个')
+    print(str(num_test))
     testdata = prot_t5(te_data[0])
     te_data = te_data[1:]
     for i in te_data:
         num_test += 1
-        print('第' + str(num_test) + '个')
+        print(str(num_test))
         i = prot_t5(i)
         testdata = np.concatenate((testdata, i), axis=0)
     torch.save(testdata, 'data/testdata.pt')
