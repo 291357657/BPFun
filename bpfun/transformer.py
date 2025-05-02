@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2023/9/13 15:43
-# @Author  : 孙昊
-# @File    : transformer.py
-
-
 from keras import layers
 import tensorflow as tf
 from tensorflow import keras
