@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2023/9/13 15:40
-# @Author  : 孙昊
-# @File    : model.py
-
 import tensorflow as tf
 from keras.models import Model
 from keras.optimizers import Adam
