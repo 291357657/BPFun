@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2023/9/13 16:05
-# @Author  : 孙昊
-# @File    : test.py
-
-
 import os
 import torch
 import keras
@@ -40,6 +34,20 @@ def predict(X_test, y_test, thred, weights, h5_model, dir, out_length):
         print("Prediction is in progress")
         score = load_my_model.predict(X_test)
         # np.save('data/pred.npy',score)
+
+        pred1 = score.flatten()
+        test1 = y_test.flatten()
+        pred_label = [1 if x > 0.5 else 0 for x in pred1]
+
+        tn, fp, fn, tp = metrics.confusion_matrix(test1, pred_label).ravel()
+
+        specificity = tn / (tn + fp)
+        sensitivity = tp / (tp + fn)
+        mcc = metrics.matthews_corrcoef(y_true=test1, y_pred=pred_label)
+    
+
+
+        
         for i in range(len(score)):
             for j in range(len(score[i])):
                 if score[i][j] < thred:
@@ -77,6 +85,9 @@ def predict(X_test, y_test, thred, weights, h5_model, dir, out_length):
     print('f1:',f1)
     print('absolute_true:', absolute_true)
     print('absolute_false:', absolute_false)
+    print('sensitivity:', sensitivity)
+    print('specificity:', specificity)
+    print('mcc:', mcc)
 
     out = dir
     Path(out).mkdir(exist_ok=True, parents=True)
@@ -88,6 +99,9 @@ def predict(X_test, y_test, thred, weights, h5_model, dir, out_length):
         fout.write('f1:{}\n'.format(f1))
         fout.write('absolute_true:{}\n'.format(absolute_true))
         fout.write('absolute_false:{}\n'.format(absolute_false))
+        fout.write('sensitivity:{}\n'.format(sensitivity))
+        fout.write('specificity:{}\n'.format(specificity))
+        fout.write('mcc:{}\n'.format(mcc))
         fout.write('\n')
 
 if __name__ == '__main__':
