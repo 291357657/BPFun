@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2023/9/16 18:24
-# @Author  : 孙昊
-# @File    : aaindex1_test.py
-
-
 import pandas as pd
 import numpy as np
 
