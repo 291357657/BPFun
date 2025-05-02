@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2023/9/13 14:41
-# @Author  : 孙昊
-# @File    : getdata.py
-
-
 import os
 import random
 import numpy as np
