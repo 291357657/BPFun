@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2023/9/13 15:13
-# @Author  : 孙昊
-# @File    : train.py
-
-
 import os
 import math
 import torch
