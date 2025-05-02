@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2023/9/13 16:13
-# @Author  : 孙昊
-# @File    : evaluation.py
-
 import numpy as np
 from sklearn import metrics
 
